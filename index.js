@@ -15,18 +15,32 @@ function pullCity(){
     })
 }
 
+function generateToken(){
+    fetch('https://partners.api.skyscanner.net/apiservices/token/v2/gettoken?apiKey=prtl6749387986743898559646983194')
+    .then(response => {
+        if(response.ok){
+            return response.json();
+        }
+        throw new Error('unable to generate token');
+    })
+    .then(responseJson => responseJson)
+    .catch(error => alert(`${error}`))
+}
+
 function getAirportsByCity(city){
     const token = "_eyW-HBGj4Fm08atyrx_YRrq7QP6Qn8Ro2uVCxmrlPCMGw_A-7jATd9jUKmE0HFS_6Nbn4BUKaXA459VZNP3hjQ=="
     const options = {
         headers: new Headers({
+            'Access-Control-Allow-Origin': 'no-cors',
             "Accept": "application/json",
-            "Access-Control-Allow-Origin": "*",
             "Vary": "Origin",
 
         })
     };
 
-    fetch(`https://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/Us/USD/en-US/?query=${city}&apiKey=_eyW-HBGj4Fm08atyrx_YRrq7QP6Qn8Ro2uVCxmrlPCMGw_A-7jATd9jUKmE0HFS_6Nbn4BUKaXA459VZNP3hjQ==`,options)
+    fetch(`https://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/Us/USD/en-US/?query=${city}&apiKey=_Mkt3I2LzitaQO5bQ3-w6SjzRNev1bdPy82tXklnYMtbgg7On_Y9_Vcu_Jf0UZtZPbgUVpu9TZ5XMGJCYkqrJgQ==`,options)
+    mode: 'no-cors'
+    
     .then(response => {
         if(response.ok){
             return response.json();
