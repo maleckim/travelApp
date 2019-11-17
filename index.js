@@ -26,7 +26,7 @@ function getAirportsByCity(city){
         })
     };
 
-    fetch(`http://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/Us/USD/en-US/?query=${city}&apiKey=_eyW-HBGj4Fm08atyrx_YRrq7QP6Qn8Ro2uVCxmrlPCMGw_A-7jATd9jUKmE0HFS_6Nbn4BUKaXA459VZNP3hjQ==`,options)
+    fetch(`https://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/Us/USD/en-US/?query=${city}&apiKey=_eyW-HBGj4Fm08atyrx_YRrq7QP6Qn8Ro2uVCxmrlPCMGw_A-7jATd9jUKmE0HFS_6Nbn4BUKaXA459VZNP3hjQ==`,options)
     .then(response => {
         if(response.ok){
             return response.json();
