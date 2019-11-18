@@ -39,6 +39,8 @@ $(dom);
 
 http://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/Us/USD/en-US/?query=chicago&apiKey=prtl6749387986743898559646983194
 
+https://skyscanner.github.io/slate/#hotels
+
 function getAirportsByCity(city){
     fetch(`http://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/Us/USD/en-US/?query=${city}&apiKey=prtl6749387986743898559646983194`)
     .then(response => {

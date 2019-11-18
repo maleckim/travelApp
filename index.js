@@ -28,13 +28,15 @@ function pullCity(){
 // }
 
 function getAirportsByCity(city){
-    // const token = generateToken();
+    // let token = generateToken();
+    // token = encodeURL(token);
     
 
-    fetch(`https://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/Us/USD/en-US/?query=${city}&apiKey=_qDrc-5-DkJ-nLtxlp-dFyRvzKHpAJ9bqaq3Smkrwitjvt5_E_3VLEOVRdHIMl7QtBkNxci1xSCdXslu0gOZw2g%3D%3D`,{
+    fetch(`https://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/Us/USD/en-US/?query=${city}&apiKey=_SzUsc9IFFVioP9RTIQ5MVAJXiSUwliLWTSIh8HpB1W4EoSV7x57DkqnvAODqjUSJ8LguiGgFi-8EgmcBsO3V9Q%3D%3D`,{
         mode:'no-cors',
         headers: new Headers({
-            'Accept': 'application/json'
+            'Accept': 'application/json',
+            'Accept-Encoding':'gzip,deflate',    
         })
         
     })
@@ -49,7 +51,7 @@ function getAirportsByCity(city){
 }
 
 function displayResults(responseJson){
-     console.log(responseJson.Places);
+     return console.log(responseJson);
 }
 
 
