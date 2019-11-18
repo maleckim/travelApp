@@ -32,11 +32,13 @@ function getAirportsByCity(city){
     // token = encodeURL(token);
     
 
-    fetch(`https://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/Us/USD/en-US/?query=${city}&apiKey=_SzUsc9IFFVioP9RTIQ5MVAJXiSUwliLWTSIh8HpB1W4EoSV7x57DkqnvAODqjUSJ8LguiGgFi-8EgmcBsO3V9Q%3D%3D`,{
+    fetch(`https://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/Us/USD/en-US/?query=${city}&apiKey=prtl6749387986743898559646983194`,{
         mode:'no-cors',
         headers: new Headers({
             'Accept': 'application/json',
-            'Accept-Encoding':'gzip,deflate',    
+            'Accept-Encoding':'gzip,deflate', 
+            'Cache-Control': 'no-cache',
+            'Host':'partners.api.skyscanner.net', 
         })
         
     })
@@ -46,12 +48,13 @@ function getAirportsByCity(city){
         }
         throw new Error(response.statusText);
     })
-    .then(responseJson => displayResults(responseJson))
-    .catch(error => alert('nope'));
+    .then(responseJson => console.log(responseJson))
+    .catch(error => alert('nope'))
 }
 
 function displayResults(responseJson){
-     return console.log(responseJson);
+    
+    console.log(responseJson);
 }
 
 
